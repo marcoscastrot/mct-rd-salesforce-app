@@ -1,0 +1,28 @@
+<h1>List of people</h1>
+<%= link_to 'New person', new_person_path %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Company</th>
+    <th>Job Title</th>
+    <th>Phone</th>
+    <th>Website</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @leads.each do |lead| %>
+    <tr>
+      <td><%= lead.FirstName %> <%= lead.LastName %></td>
+      <td><%= lead.Email %></td>
+      <td><%= lead.Company %></td>
+      <td><%= lead.Title %></td>
+      <td><%= lead.Phone %></td>
+      <td><%= lead.Website %></td>
+      <td><%= link_to 'Show', person_path(lead.Id) %></td>
+      <td><%= link_to 'Edit', edit_person_path(lead.Id) %></td>
+      <td><%= link_to 'Destroy', person_path(lead.Id),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+</table>

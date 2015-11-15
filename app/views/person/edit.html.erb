@@ -1,0 +1,59 @@
+<h1>Edit person</h1>
+ 
+<%= form_for :lead, url: person_path(@leadId), method: :PUT do |f| %>
+ 
+  <% if @lead.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@lead.errors.count, "error") %> Invalid fields:
+      </h2>
+      <ul>
+        <% @lead.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p>
+    <%= f.label :FirstName %><br>
+    <%= f.text_field :FirstName %>
+  </p>
+ 
+  <p>
+    <%= f.label :LastName %><br>
+    <%= f.text_field :LastName %>
+  </p>
+
+  <p>
+    <%= f.label :Company %><br>
+    <%= f.text_field :Company %>
+  </p>
+ 
+  <p>
+    <%= f.label :Email %><br>
+    <%= f.text_field :Email %>
+  </p>
+
+  <p>
+    <%= f.label :Website %><br>
+    <%= f.text_field :Website %>
+  </p>
+ 
+  <p>
+    <%= f.label :Phone %><br>
+    <%= f.text_field :Phone %>
+  </p>
+
+  <p>
+    <%= f.label :Title %><br>
+    <%= f.text_field :Title %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', person_index_path %>
