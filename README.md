@@ -1,1 +1,0 @@
-# mct-rd-salesforce-app
