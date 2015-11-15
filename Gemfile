@@ -37,4 +37,10 @@ gem 'mct-rd-salesforce', '~> 0.0.3'
 
 gem 'rails_12factor', group: :production
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+
 ruby '2.2.2'
